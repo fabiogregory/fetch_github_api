@@ -1,0 +1,40 @@
+<div class="contact-container">
+  <h1>Contato</h1>
+
+  <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <h5 *ngIf="success">Formulário Válido!</h5>
+
+    <label>
+      Nome:
+      <input type="text" formControlName="name" />
+      <div *ngIf="submitted && messageForm['controls']['name'].errors" class="error">
+        <div *ngIf="messageForm.controls['name'].errors['required']">
+          Nome Obrigatório
+        </div>
+      </div>
+    </label>
+
+    <label>
+      Mensagem:
+      <textarea formControlName="message"></textarea>
+      <div
+        *ngIf="submitted && messageForm.controls['message'].errors"
+        class="error"
+      >
+        <div *ngIf="messageForm.controls['message'].errors['required']">
+          Mensagem Obrigatória
+        </div>
+      </div>
+    </label>
+
+    <input type="submit" value="Enviar" class="cta" />
+  </form>
+
+  <div *ngIf="submitted" class="results">
+    <strong>Nome:</strong>
+    <span>{{ messageForm.controls["name"].value }}</span>
+
+    <strong>Mensagem:</strong>
+    <span>{{ messageForm.controls["message"].value }}</span>
+  </div>
+</div>

@@ -3,18 +3,18 @@
       <div class="card-header">
         <div class="avatar">
           <img
-          [src]="(userInfo$ | async).avatar_url"
+          [src]="(userInfo$ | async)?.avatar_url"
           />
         </div>
 
         <h1 class="profile-name">
-          {{(userInfo$ | async).name}}
+          {{(userInfo$ | async)?.name}}
         </h1>
         <h4>
-          {{(userInfo$ | async).bio}}
+          {{(userInfo$ | async)?.bio}}
         </h4>
-        {{(userInfo$ | async).location}}
-         <a class="profile-blog" href="{{(userInfo$ | async).blog}}">Linkedin</a>
+        {{(userInfo$ | async)?.location}}
+         <div><a class="profile-blog" href="{{(userInfo$ | async)?.blog}}">Linkedin</a></div>
       </div>
     </div>
   </div>

@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   // background-color: #bacad9;
 
   .card {
@@ -46,6 +47,7 @@
 
       .profile-blog {
         color: blue;
+        font-weight: bold;
       }
     }
   }
